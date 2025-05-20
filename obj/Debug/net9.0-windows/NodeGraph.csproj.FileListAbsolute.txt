@@ -18,3 +18,4 @@ D:\Project\C#\NodeGraph\obj\Debug\net9.0-windows\refint\NodeGraph.dll
 D:\Project\C#\NodeGraph\obj\Debug\net9.0-windows\NodeGraph.pdb
 D:\Project\C#\NodeGraph\obj\Debug\net9.0-windows\NodeGraph.genruntimeconfig.cache
 D:\Project\C#\NodeGraph\obj\Debug\net9.0-windows\ref\NodeGraph.dll
+D:\Project\C#\NodeGraph\obj\Debug\net9.0-windows\NodeGraph.sourcelink.json

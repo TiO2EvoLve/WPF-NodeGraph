@@ -23,6 +23,7 @@ public partial class MainWindow : Window
     private Line connectionLine;
     private bool isDraggingConnection = false;
     private Dictionary<Connector, Ellipse> connectorVisuals = new Dictionary<Connector, Ellipse>();
+    private Point lastMousePosition;
 
     public MainWindow()
     {
@@ -42,30 +43,36 @@ public partial class MainWindow : Window
         nodeCanvas.Children.Add(connectionLine);
     }
 
-    private void btnCreateFloat_Click(object sender, RoutedEventArgs e)
+    private void nodeCanvas_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        lastMousePosition = e.GetPosition(nodeCanvas);
+        nodeContextMenu.IsOpen = true;
+    }
+
+    private void CreateFloatNode_Click(object sender, RoutedEventArgs e)
     {
         var node = new FloatNode();
-        AddNodeToCanvas(node);
+        AddNodeToCanvas(node, lastMousePosition);
     }
 
-    private void btnCreateAdd_Click(object sender, RoutedEventArgs e)
+    private void CreateAddNode_Click(object sender, RoutedEventArgs e)
     {
         var node = new AddNode();
-        AddNodeToCanvas(node);
+        AddNodeToCanvas(node, lastMousePosition);
     }
 
-    private void btnCreatePrint_Click(object sender, RoutedEventArgs e)
+    private void CreatePrintNode_Click(object sender, RoutedEventArgs e)
     {
         var node = new PrintNode();
-        AddNodeToCanvas(node);
+        AddNodeToCanvas(node, lastMousePosition);
     }
 
-    private void AddNodeToCanvas(Node node)
+    private void AddNodeToCanvas(Node node, Point position)
     {
         nodes.Add(node);
         nodeCanvas.Children.Add(node);
-        Canvas.SetLeft(node, 100);
-        Canvas.SetTop(node, 100);
+        Canvas.SetLeft(node, position.X);
+        Canvas.SetTop(node, position.Y);
 
         // 为每个连接器添加鼠标事件
         foreach (var input in node.Inputs)
@@ -124,6 +131,15 @@ public partial class MainWindow : Window
         {
             if (isDraggingConnection && connector.Type == ConnectorType.Input)
             {
+                // 检查输入端是否已经有连接
+                if (connector.ConnectedTo != null)
+                {
+                    MessageBox.Show("该输入端已经连接，请先断开现有连接。", "连接错误", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    isDraggingConnection = false;
+                    connectionLine.Visibility = Visibility.Collapsed;
+                    return;
+                }
+
                 // 创建连接
                 startConnector.ConnectedTo = connector;
                 connector.ConnectedTo = startConnector;
