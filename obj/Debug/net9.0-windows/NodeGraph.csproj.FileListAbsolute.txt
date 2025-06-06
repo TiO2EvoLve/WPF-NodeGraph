@@ -1,7 +1,6 @@
 D:\Project\C#\NodeGraph\obj\Debug\net9.0-windows\MainWindow.g.cs
 D:\Project\C#\NodeGraph\obj\Debug\net9.0-windows\App.g.cs
 D:\Project\C#\NodeGraph\obj\Debug\net9.0-windows\NodeGraph_MarkupCompile.cache
-D:\Project\C#\NodeGraph\obj\Debug\net9.0-windows\NodeGraph_MarkupCompile.lref
 D:\Project\C#\NodeGraph\bin\Debug\net9.0-windows\NodeGraph.exe
 D:\Project\C#\NodeGraph\bin\Debug\net9.0-windows\NodeGraph.deps.json
 D:\Project\C#\NodeGraph\bin\Debug\net9.0-windows\NodeGraph.runtimeconfig.json

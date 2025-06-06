@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NodeGraph")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aff4f927cfb5a529aafc2accd694ae00c4c47777")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd63bb9a629f36ab65c1a5d83412487c92178191")]
 [assembly: System.Reflection.AssemblyProductAttribute("NodeGraph")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NodeGraph")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

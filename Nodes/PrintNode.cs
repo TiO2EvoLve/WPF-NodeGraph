@@ -1,3 +1,4 @@
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -31,10 +32,15 @@ namespace NodeGraph
 
         public override void Execute()
         {
-            if (Inputs[0].ConnectedTo?.ParentNode is AddNode addNode)
+            if (Inputs[0].ConnectedTo?.ParentNode is INodeOutput inputNode)
             {
-                resultText.Text = $"结果: {addNode.Result}";
+                // 将结果显示在控制台上
+                float result = inputNode.GetValue();
+                Console.WriteLine($"结果: {result}");
+                
+                // 如果需要，仍然可以在界面上显示结果
+                resultText.Text = $"结果: {result}";
             }
         }
     }
-} 
+}

@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:NodeGraph"
         mc:Ignorable="d"
         Title="节点编辑器" Height="600" Width="1000">
     <Grid>
@@ -20,7 +19,9 @@
         </Canvas>
         
         <Button x:Name="btnRun" Content="运行" 
-                HorizontalAlignment="Right" 
+                Foreground="White"
+                Background="ForestGreen"
+                HorizontalAlignment="Center" 
                 VerticalAlignment="Top" 
                 Margin="0,10,10,0" 
                 Padding="10,5"
